@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for order in orders %}
+
+    <a href="{% url 'detail-order' order.id %}">
+        <h2>{{ order.name }}</h2>
+    </a>
+        <h3>{{ order.price }}</h3>
+    {% endfor %}
+    <form method="get">
+        <label for="order_by">Order By </label>
+        <select name="order_by" id="order_by">
+            <option value="date">Date</option>
+            <option value="price">price</option>
+            <option value="customer">customer</option>
+            <option value="payed">payed</option>
+            <option value="amount">amount</option>
+        </select>
+        <label for="asc">asc</label>
+        <input type="checkbox" name = 'asc' id = 'asc' value=false>
+        <button type="submit">apply</button>
+    </form>
+</body>
+</html>

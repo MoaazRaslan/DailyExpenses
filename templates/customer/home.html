@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Your Customer</h1>
+    {% for customer in customers %}
+    <a href="{% url 'detail-view' customer.id %}">
+        <h2>{{ customer.name }}</h2>
+    </a>
+    <h3>{{ customer.user.username }}</h3>
+    {% endfor %}
+</body>
+</html>

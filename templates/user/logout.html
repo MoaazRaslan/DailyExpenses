@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+</head>
+<body>
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        <h1>You have been successfully logged out.</h1>
+        <button type="submit">home</button>
+    </form>
+</body>
+</html>
